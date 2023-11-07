@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>摸彩金遊戲</title>
+</head>
+<body>
+    <h1>摸彩金遊戲</h1>
+
+    <button onclick="playGame()">開始摸彩金</button>
+
+    <p>摸彩金紀錄：</p>
+    <ul id="recordList"></ul>
+
+    <p>彩金總金額（百元）：<span id="totalAmount">0</span></p>
+
+    <script>
+        function playGame() {
+            var totalAmount = 0; // 彩金總金額
+            var recordList = document.getElementById("recordList");
+
+            for (var i = 1; i <= 10; i++) {
+                var randomAmount = Math.floor(Math.random() * 11); // 隨機生成0到10之間的彩金金額
+                if (randomAmount === 0) {
+                    break; // 如果摸到的彩球是0，停止摸彩
+                }
+                totalAmount += randomAmount;
+                var listItem = document.createElement("li");
+                listItem.textContent = "第 " + i + " 次摸彩金金額：" + randomAmount + " 百元";
+                recordList.appendChild(listItem);
+            }
+
+            document.getElementById("totalAmount").textContent = totalAmount;
+        }
+    </script>
+</body>
+</html>

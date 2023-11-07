@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>摸彩金遊戲</title>
+</head>
+<body>
+    <h1>摸彩金遊戲</h1>
+
+    <button onclick="playGame()">開始摸彩金</button>
+
+    <p id="gameResult"></p>
+
+    <script>
+        function playGame() {
+            var totalAmount = 0; // 彩金總金額
+            var numAttempts = 0; // 摸彩次數
+
+            while (true) {
+                var randomAmount = Math.floor(Math.random() * 11); // 隨機生成0到10之間的彩金金額
+                numAttempts++; // 增加摸彩次數
+
+                if (randomAmount === 0) {
+                    break; // 如果摸到的彩球是0，停止摸彩
+                }
+
+                totalAmount += randomAmount; // 累計彩金金額
+            }
+
+            var gameResult = "摸彩次數：" + numAttempts + " 次<br>彩金總金額：" + totalAmount + " 百元";
+            document.getElementById("gameResult").innerHTML = gameResult;
+        }
+    </script>
+</body>
+</html>

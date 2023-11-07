@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>橘子購買小計</title>
+</head>
+<body>
+    <h1>橘子購買小計</h1>
+
+    <p>橘子等級：</p>
+    <select id="orangeGrade">
+        <option value="1">等級 1</option>
+        <option value="2">等級 2</option>
+        <option value="3">等級 3</option>
+    </select>
+
+    <p>購買斤數：</p>
+    <input type="text" id="kilograms">
+    <button onclick="calculateTotal()">計算小計</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateTotal() {
+            // 取得所選的橘子等級和購買斤數
+            var orangeGrade = parseInt(document.getElementById("orangeGrade").value);
+            var kilograms = parseFloat(document.getElementById("kilograms").value);
+
+            // 計算小計
+            var pricePerKilogram;
+            if (kilograms >= 100) {
+                pricePerKilogram = (orangeGrade === 1) ? 20 : (orangeGrade === 2) ? 15 : 10;
+            } else if (kilograms >= 40) {
+                pricePerKilogram = (orangeGrade === 1) ? 30 : (orangeGrade === 2) ? 25 : 20;
+            } else {
+                pricePerKilogram = (orangeGrade === 1) ? 25 : (orangeGrade === 2) ? 20 : 15;
+            }
+
+            var subtotal = pricePerKilogram * kilograms;
+
+            // 顯示結果在網頁上
+            var result = "小計： " + subtotal + " 元";
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

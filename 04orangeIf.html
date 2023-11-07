@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>橘子購買小計</title>
+</head>
+<body>
+    <h1>橘子購買小計</h1>
+
+    <p>橘子單價（每斤）：</p>
+    <input type="text" id="pricePerKilogram">
+    <p>購買斤數：</p>
+    <input type="text" id="kilograms">
+    <button onclick="calculateTotal()">計算小計</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateTotal() {
+            // 取得橘子單價（每斤）和購買斤數
+            var pricePerKilogram = parseFloat(document.getElementById("pricePerKilogram").value);
+            var kilograms = parseFloat(document.getElementById("kilograms").value);
+
+            // 計算小計
+            var subtotal = pricePerKilogram * kilograms;
+
+            // 檢查是否超過 500 元，如果是則打九折
+            if (subtotal > 500) {
+                subtotal *= 0.9; // 打九折
+            }
+
+            // 顯示結果在網頁上
+            var result = "小計： " + subtotal + " 元";
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

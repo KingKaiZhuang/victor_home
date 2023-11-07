@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>整數和計算</title>
+</head>
+<body>
+    <h1>整數和計算</h1>
+
+    <p>請輸入一個正整數：</p>
+    <input type="text" id="numberInput">
+    <button onclick="calculateSums()">計算</button>
+
+    <p id="totalSum"></p>
+    <p id="oddSum"></p>
+    <p id="evenSum"></p>
+
+    <script>
+        function calculateSums() {
+            // 取得輸入的正整數
+            var number = parseInt(document.getElementById("numberInput").value);
+
+            var totalSum = 0; // 1 到該整數的總和
+            var oddSum = 0;  // 奇數和
+            var evenSum = 0; // 偶數和
+
+            for (var i = 1; i <= number; i++) {
+                totalSum += i; // 計算1到該整數的總和
+
+                if (i % 2 === 1) {
+                    oddSum += i; // 奇數和
+                } else {
+                    evenSum += i; // 偶數和
+                }
+            }
+
+            // 顯示結果在網頁上
+            document.getElementById("totalSum").innerHTML = "1 到 " + number + " 的總和為： " + totalSum;
+            document.getElementById("oddSum").innerHTML = "奇數和為： " + oddSum;
+            document.getElementById("evenSum").innerHTML = "偶數和為： " + evenSum;
+        }
+    </script>
+</body>
+</html>

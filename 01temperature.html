@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>攝氏轉華氏</title>
+</head>
+<body>
+    <h1>攝氏轉華氏溫度轉換</h1>
+
+    <p>輸入攝氏溫度：</p>
+    <input type="text" id="celsiusInput">
+    <button onclick="convertCelsiusToFahrenheit()">轉換</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertCelsiusToFahrenheit() {
+            // 取得輸入的攝氏溫度
+            var celsius = parseFloat(document.getElementById("celsiusInput").value);
+
+            // 進行攝氏轉華氏的計算
+            var fahrenheit = (celsius * 9/5) + 32;
+
+            // 顯示結果在網頁上
+            document.getElementById("result").innerHTML = "華氏溫度為: " + fahrenheit + " 度";
+        }
+    </script>
+</body>
+</html>
