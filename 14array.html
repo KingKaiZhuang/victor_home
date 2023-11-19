@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隨機數統計</title>
+  <style>
+    /* 添加一些樣式，讓結果更易讀 */
+    body {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>隨機數統計</h1>
+
+<script>
+  // 產生10個介於1~100之間的隨機數
+  let numbers = [];
+  for (let i = 0; i < 10; i++) {
+    numbers.push(Math.floor(Math.random() * 10) + 1);
+  }
+
+  // 印出10個數字
+  document.write(`<p>隨機數陣列: ${numbers.join(" ")}</p>`);
+
+  // 計算總和
+  let sum = numbers.reduce((acc, num) => acc + num, 0);
+  document.write(`<p>總和: ${sum}</p>`);
+
+  // 計算最小值
+  let min = Math.min(...numbers);
+  document.write(`<p>最小值: ${min}</p>`);
+
+  // 計算最大值
+  let max = Math.max(...numbers);
+  document.write(`<p>最大值: ${max}</p>`);
+</script>
+
+</body>
+</html>

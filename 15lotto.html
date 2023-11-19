@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大樂透數字產生器</title>
+  <style>
+    /* 添加一些樣式，讓結果更易讀 */
+    body {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>大樂透數字產生器</h1>
+
+<script>
+  function generateLotteryNumbers() {
+    let lotteryNumbers = [];
+
+    while (lotteryNumbers.length < 6) {
+      let randomNumber = Math.floor(Math.random() * 49) + 1;
+
+      // 確保數字不重覆
+      if (!lotteryNumbers.includes(randomNumber)) {
+        lotteryNumbers.push(randomNumber);
+      }
+    }
+
+    return lotteryNumbers;
+  }
+
+  // 產生並印出大樂透數字
+  let result = generateLotteryNumbers();
+  document.write(`<p>大樂透數字: ${result.join(', ')}</p>`);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星星圖案</title>
+  <style>
+    /* 添加一些樣式，讓星星圖案更易讀 */
+    body {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>星星圖案</h1>
+
+<script>
+  // 星星圖案
+  for (let i = 1; i <= 6; i++) {
+    let stars = '';
+    for (let j = 1; j <= i; j++) {
+      stars += '*';
+    }
+    // 在網頁上顯示星星圖案
+    document.write(stars + '<br>');
+  }
+
+  // 顛倒順序的星星圖案
+  for (let i = 4; i >= 1; i--) {
+    let stars = '';
+    for (let j = 1; j <= i; j++) {
+      stars += '*';
+    }
+    // 在網頁上顯示星星圖案
+    document.write(stars + '<br>');
+  }
+</script>
+
+</body>
+</html>
